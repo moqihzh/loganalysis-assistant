@@ -2,7 +2,8 @@
 
 - 一个基于FastAPI的业务系统错误日志分析助手，可以自动从Elasticsearch获取错误日志，使用Deepseek进行智能分析，并通过企业微信机器人发送通知。
 - 本系统大部分代码由AI完成，少量代码由人工完成。
-
+- 技术栈：Python +FastAPI + Elasticsearch + MySQL + Deepseek + 企业微信机器人
+  
 ## 功能特点
 
 - 自动获取ES中最近5分钟的错误日志
