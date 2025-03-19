@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>业务系统错误日志分析助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/modal.css">
+</head>
+<body>
+    <nav class="nav-menu">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                日志分析助手
+            </div>
+            <a href="/" class="nav-link active">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                日志查询
+            </a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">业务系统错误日志分析助手</h1>
+        <div class="header">
+            <button id="triggerAnalysis" class="trigger-btn">手动触发分析</button>
+            <div id="taskStatus" class="task-status">当前无任务运行</div>
+        </div>
+
+        <div class="table-container">
+            <table id="logTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>时间</th>
+                        <th>应用ID</th>
+                        <th class="wide-column">错误信息</th>
+                        <th class="wide-column">DeepSeek分析结果</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+            <div id="loading" class="loading-container">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">加载中...</div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <div class="pagination-info">
+                总记录数：<span id="totalRecords">0</span>
+                总页数：<span id="totalPages">0</span>
+            </div>
+            <div class="pagination-controls">
+                <button id="prevPage" class="page-btn" disabled>上一页</button>
+                <div class="page-input-group">
+                    <input type="number" id="pageInput" class="page-input" min="1" value="1">
+                    <span> / <span id="maxPage">1</span></span>
+                </div>
+                <button id="nextPage" class="page-btn" disabled>下一页</button>
+                <div class="page-size-group">
+                    <select id="pageSize" class="page-size-select">
+                        <option value="10">10条/页</option>
+                        <option value="20">20条/页</option>
+                        <option value="50">50条/页</option>
+                        <option value="100">100条/页</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    <!-- 错误详情模态框 -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">错误详情</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</body>
+</html>

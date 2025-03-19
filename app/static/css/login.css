@@ -1,0 +1,143 @@
+/* 登录页面样式 */
+.login-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fa;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-logo {
+    width: 48px;
+    height: 48px;
+    color: #1890ff;
+    margin-bottom: 16px;
+}
+
+.login-header h1 {
+    font-size: 24px;
+    color: #1890ff;
+    margin: 0;
+    font-weight: 600;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 10px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.captcha-group .captcha-container {
+    display: flex;
+    gap: 12px;
+}
+
+.captcha-group input {
+    flex: 1;
+}
+
+.captcha-group img {
+    height: 38px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #40a9ff;
+}
+
+.login-btn:active {
+    background-color: #096dd9;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* 加载状态 */
+.login-btn.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.login-btn.loading::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: button-loading 0.6s linear infinite;
+}
+
+@keyframes button-loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
